@@ -1,0 +1,490 @@
+/* Resetare și setări de bază */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Stiluri pentru meniu */
+.navbar {
+    background: linear-gradient(90deg, #0f172a, #1e293b);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo-image {
+    width: 60px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.logo-image:hover {
+    transform: rotate(360deg);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    opacity: 0;
+    animation: slideIn 0.5s ease forwards;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.nav-links li:nth-child(1) { --i: 1; }
+.nav-links li:nth-child(2) { --i: 2; }
+.nav-links li:nth-child(3) { --i: 3; }
+.nav-links li:nth-child(4) { --i: 4; }
+.nav-links li:nth-child(5) { --i: 5; }
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #3b82f6;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3b82f6;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Stiluri pentru secțiunea introductivă */
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.cta-button {
+    background: linear-gradient(90deg, #fff, #e0e7ff);
+    color: #3b82f6;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Stiluri pentru secțiunea cu branduri */
+.brands {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.brands h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.brands-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    background: linear-gradient(145deg, #f5f7fa, #e0e7ff);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 30px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    opacity: 0;
+    animation: zoomIn 0.8s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+.brand:nth-child(1) { --i: 1; }
+.brand:nth-child(2) { --i: 2; }
+.brand:nth-child(3) { --i: 3; }
+.brand:nth-child(4) { --i: 4; }
+
+.brand:hover {
+    transform: translateY(-15px) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.brand-image {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.brand:hover .brand-image {
+    transform: scale(1.1);
+}
+
+.brand h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #3b82f6;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.brand p {
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+/* Stiluri pentru secțiunea cu abonamente */
+.subscriptions {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f5f7fa, #e0e7ff);
+}
+
+.subscriptions h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.plan {
+    background: linear-gradient(145deg, #fff, #f5f7fa);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 340px;
+    padding: 30px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    opacity: 0;
+    animation: slideInUp 0.8s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+.plan:nth-child(1) { --i: 1; }
+.plan:nth-child(2) { --i: 2; }
+.plan:nth-child(3) { --i: 3; }
+
+.plan:hover {
+    transform: translateY(-15px) rotate(-2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.plan.highlighted {
+    border: 3px solid #3b82f6;
+    background: linear-gradient(145deg, #e0e7ff, #d0d9ff);
+}
+
+.plan h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #3b82f6;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.small-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.plan li {
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.plan li:nth-child(1) { --i: 1; }
+.plan li:nth-child(2) { --i: 2; }
+.plan li:nth-child(3) { --i: 3; }
+.plan li:nth-child(4) { --i: 4; }
+.plan li:nth-child(5) { --i: 5; }
+.plan li:nth-child(6) { --i: 6; }
+.plan li:nth-child(7) { --i: 7; }
+
+.plan button {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+.plan button:hover {
+    transform: scale(1.05);
+}
+
+/* Stiluri pentru pagina Despre noi */
+.about {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.about h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.about p {
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+/* Stiluri pentru pagina Contact */
+.contact {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f5f7fa, #e0e7ff);
+}
+
+.contact h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.contact label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+    outline: none;
+}
+
+.contact textarea {
+    height: 120px;
+}
+
+.contact button {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.contact button:hover {
+    transform: scale(1.05);
+}
+
+.contact p {
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+/* Animații */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
