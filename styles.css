@@ -1,190 +1,289 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Resetare și fonturi */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    overflow-x: hidden;
 }
 
 /* Stiluri pentru meniu */
 .navbar {
-    background-color: #333;
-    padding: 15px 20px;
+    background: linear-gradient(90deg, #1a1a2e, #16213e);
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo-image {
-    width: 50px;
+    width: 60px;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: rotate(360deg);
 }
 
 .nav-links {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-links li {
-    display: inline;
+    opacity: 0;
+    animation: slideIn 0.5s ease forwards;
+    animation-delay: calc(0.1s * var(--i));
 }
+
+.nav-links li:nth-child(1) { --i: 1; }
+.nav-links li:nth-child(2) { --i: 2; }
+.nav-links li:nth-child(3) { --i: 3; }
+.nav-links li:nth-child(4) { --i: 4; }
+.nav-links li:nth-child(5) { --i: 5; }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #00ddeb;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #007bff;
+    color: #00ddeb;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Stiluri pentru secțiunea introductivă */
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    background-color: #e9ecef;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #00ddeb 0%, #007bff 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background-pattern.png') repeat;
+    opacity: 0.1;
+    z-index: 0;
 }
 
 .hero h1 {
-    color: #333;
-    font-size: 36px;
+    font-size: 48px;
+    font-weight: 600;
     margin-bottom: 20px;
     opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .hero p {
-    color: #666;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 300;
     margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
 }
 
 .cta-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: #fff;
+    color: #007bff;
+    padding: 12px 30px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.6s;
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Stiluri pentru secțiunea cu branduri */
 .brands {
     text-align: center;
-    padding: 50px 20px;
+    padding: 80px 20px;
+    background-color: #fff;
 }
 
 .brands h1 {
-    color: #333;
+    font-size: 36px;
+    font-weight: 600;
     margin-bottom: 40px;
     opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .brands-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .brand {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: linear-gradient(145deg, #f0f4f8, #e0e7ff);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 30px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    opacity: 0;
+    animation: zoomIn 0.8s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
 }
 
+.brand:nth-child(1) { --i: 1; }
+.brand:nth-child(2) { --i: 2; }
+.brand:nth-child(3) { --i: 3; }
+.brand:nth-child(4) { --i: 4; }
+
 .brand:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .brand-image {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     display: block;
-    margin: 0 auto 10px;
+    margin: 0 auto 15px;
     border-radius: 50%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.brand:hover .brand-image {
+    transform: scale(1.1);
 }
 
 .brand h2 {
     color: #007bff;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 600;
     margin: 0;
 }
 
 .brand p {
     color: #666;
     font-size: 16px;
+    font-weight: 300;
     margin: 10px 0;
 }
 
 /* Stiluri pentru secțiunea cu abonamente */
 .subscriptions {
     text-align: center;
-    padding: 50px 20px;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
 }
 
 .subscriptions h1 {
-    color: #333;
+    font-size: 36px;
+    font-weight: 600;
     margin-bottom: 40px;
     opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .plans-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .plan {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: linear-gradient(145deg, #fff, #f0f4f8);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    padding: 30px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    opacity: 0;
+    animation: slideInUp 0.8s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
 }
 
+.plan:nth-child(1) { --i: 1; }
+.plan:nth-child(2) { --i: 2; }
+.plan:nth-child(3) { --i: 3; }
+
 .plan:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px) rotate(-2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .plan.highlighted {
-    border: 2px solid #007bff;
-    background-color: #f9f9f9;
+    border: 3px solid #00ddeb;
+    background: linear-gradient(145deg, #e0e7ff, #d0d9ff);
 }
 
 .plan-image {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     display: block;
-    margin: 0 auto 10px;
+    margin: 0 auto 15px;
     border-radius: 50%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.plan:hover .plan-image {
+    transform: scale(1.1);
 }
 
 .plan h2 {
     color: #007bff;
+    font-size: 24px;
+    font-weight: 600;
     margin: 0;
 }
 
 .price {
-    font-size: 24px;
+    font-size: 26px;
     color: #333;
+    font-weight: 600;
     margin: 10px 0;
 }
 
@@ -196,106 +295,183 @@ body {
 
 .plan li {
     color: #666;
+    font-size: 16px;
+    font-weight: 300;
     margin: 10px 0;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: calc(0.1s * var(--i));
 }
 
+.plan li:nth-child(1) { --i: 1; }
+.plan li:nth-child(2) { --i: 2; }
+.plan li:nth-child(3) { --i: 3; }
+
 .plan button {
-    background-color: #007bff;
+    background: linear-gradient(90deg, #007bff, #00ddeb);
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 50px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 600;
     animation: pulse 2s infinite;
+    transition: transform 0.3s ease;
 }
 
 .plan button:hover {
-    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Stiluri pentru pagina Despre noi */
 .about {
     text-align: center;
-    padding: 50px 20px;
+    padding: 80px 20px;
+    background-color: #fff;
 }
 
 .about h1 {
-    color: #333;
+    font-size: 36px;
+    font-weight: 600;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .about p {
     color: #666;
     font-size: 18px;
+    font-weight: 300;
     max-width: 800px;
     margin: 0 auto 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
 }
 
 /* Stiluri pentru pagina Contact */
 .contact {
     text-align: center;
-    padding: 50px 20px;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
 }
 
 .contact h1 {
-    color: #333;
+    font-size: 36px;
+    font-weight: 600;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .contact form {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     text-align: left;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
 }
 
 .contact label {
     display: block;
     margin: 10px 0 5px;
     color: #333;
+    font-weight: 400;
 }
 
 .contact input,
 .contact textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
 }
 
 .contact textarea {
-    height: 100px;
+    height: 120px;
 }
 
 .contact button {
-    background-color: #007bff;
+    background: linear-gradient(90deg, #007bff, #00ddeb);
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 30px;
+    border-radius: 50px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
 }
 
 .contact button:hover {
-    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .contact p {
     color: #666;
+    font-size: 16px;
+    font-weight: 300;
     margin: 10px 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.6s;
 }
 
 /* Animații */
-@keyframes fadeIn {
+@keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -306,7 +482,7 @@ body {
     }
     50% {
         transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+        box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
     }
     100% {
         transform: scale(1);
