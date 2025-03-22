@@ -1,4 +1,4 @@
-/* Resetare și fonturi */
+/* Resetare și setări de bază */
 * {
     margin: 0;
     padding: 0;
@@ -6,15 +6,15 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f4f8;
+    font-family: 'Raleway', sans-serif;
+    background-color: #f5f7fa;
     color: #333;
     overflow-x: hidden;
 }
 
 /* Stiluri pentru meniu */
 .navbar {
-    background: linear-gradient(90deg, #1a1a2e, #16213e);
+    background: linear-gradient(90deg, #0f172a, #1e293b);
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
@@ -22,13 +22,13 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .logo-image {
     width: 60px;
     height: auto;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .logo-image:hover {
@@ -56,8 +56,9 @@ body {
 .nav-links a {
     color: #fff;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     position: relative;
     transition: color 0.3s ease;
 }
@@ -67,14 +68,14 @@ body {
     position: absolute;
     width: 0;
     height: 2px;
-    background-color: #00ddeb;
+    background-color: #3b82f6;
     bottom: -5px;
     left: 0;
     transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #00ddeb;
+    color: #3b82f6;
 }
 
 .nav-links a:hover::after {
@@ -84,28 +85,17 @@ body {
 /* Stiluri pentru secțiunea introductivă */
 .hero {
     text-align: center;
-    padding: 120px 20px;
-    background: linear-gradient(135deg, #00ddeb 0%, #007bff 100%);
+    padding: 150px 20px;
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
     color: #fff;
     position: relative;
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('background-pattern.png') repeat;
-    opacity: 0.1;
-    z-index: 0;
-}
-
 .hero h1 {
-    font-size: 48px;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 800;
     margin-bottom: 20px;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
@@ -121,11 +111,12 @@ body {
 }
 
 .cta-button {
-    background-color: #fff;
-    color: #007bff;
+    background: linear-gradient(90deg, #fff, #e0e7ff);
+    color: #3b82f6;
     padding: 12px 30px;
     text-decoration: none;
     border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     display: inline-block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -147,8 +138,9 @@ body {
 }
 
 .brands h1 {
-    font-size: 36px;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
     margin-bottom: 40px;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
@@ -162,10 +154,10 @@ body {
 }
 
 .brand {
-    background: linear-gradient(145deg, #f0f4f8, #e0e7ff);
-    border-radius: 15px;
+    background: linear-gradient(145deg, #f5f7fa, #e0e7ff);
+    border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    width: 280px;
+    width: 300px;
     padding: 30px;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     opacity: 0;
@@ -184,8 +176,8 @@ body {
 }
 
 .brand-image {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     display: block;
     margin: 0 auto 15px;
     border-radius: 50%;
@@ -198,16 +190,17 @@ body {
 }
 
 .brand h2 {
-    color: #007bff;
-    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    color: #3b82f6;
+    font-size: 24px;
     font-weight: 600;
     margin: 0;
 }
 
 .brand p {
-    color: #666;
+    color: #555;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     margin: 10px 0;
 }
 
@@ -215,12 +208,13 @@ body {
 .subscriptions {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
+    background: linear-gradient(135deg, #f5f7fa, #e0e7ff);
 }
 
 .subscriptions h1 {
-    font-size: 36px;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
     margin-bottom: 40px;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
@@ -234,10 +228,10 @@ body {
 }
 
 .plan {
-    background: linear-gradient(145deg, #fff, #f0f4f8);
-    border-radius: 15px;
+    background: linear-gradient(145deg, #fff, #f5f7fa);
+    border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    width: 320px;
+    width: 340px;
     padding: 30px;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     opacity: 0;
@@ -255,13 +249,13 @@ body {
 }
 
 .plan.highlighted {
-    border: 3px solid #00ddeb;
+    border: 3px solid #3b82f6;
     background: linear-gradient(145deg, #e0e7ff, #d0d9ff);
 }
 
 .plan-image {
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
     display: block;
     margin: 0 auto 15px;
     border-radius: 50%;
@@ -274,17 +268,26 @@ body {
 }
 
 .plan h2 {
-    color: #007bff;
-    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: #3b82f6;
+    font-size: 26px;
     font-weight: 600;
     margin: 0;
 }
 
 .price {
-    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
     color: #333;
     font-weight: 600;
     margin: 10px 0;
+}
+
+.small-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #666;
 }
 
 .plan ul {
@@ -294,9 +297,9 @@ body {
 }
 
 .plan li {
-    color: #666;
+    color: #555;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     margin: 10px 0;
     opacity: 0;
     animation: fadeIn 0.5s ease forwards;
@@ -306,14 +309,19 @@ body {
 .plan li:nth-child(1) { --i: 1; }
 .plan li:nth-child(2) { --i: 2; }
 .plan li:nth-child(3) { --i: 3; }
+.plan li:nth-child(4) { --i: 4; }
+.plan li:nth-child(5) { --i: 5; }
+.plan li:nth-child(6) { --i: 6; }
+.plan li:nth-child(7) { --i: 7; }
 
 .plan button {
-    background: linear-gradient(90deg, #007bff, #00ddeb);
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
     color: #fff;
     border: none;
     padding: 12px 25px;
     border-radius: 50px;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 600;
     animation: pulse 2s infinite;
@@ -332,17 +340,18 @@ body {
 }
 
 .about h1 {
-    font-size: 36px;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
     margin-bottom: 20px;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
 }
 
 .about p {
-    color: #666;
+    color: #555;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     max-width: 800px;
     margin: 0 auto 20px;
     opacity: 0;
@@ -354,12 +363,13 @@ body {
 .contact {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
+    background: linear-gradient(135deg, #f5f7fa, #e0e7ff);
 }
 
 .contact h1 {
-    font-size: 36px;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
     margin-bottom: 20px;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
@@ -378,7 +388,8 @@ body {
     display: block;
     margin: 10px 0 5px;
     color: #333;
-    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
 .contact input,
@@ -388,15 +399,15 @@ body {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 16px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact input:focus,
 .contact textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
     outline: none;
 }
 
@@ -405,12 +416,13 @@ body {
 }
 
 .contact button {
-    background: linear-gradient(90deg, #007bff, #00ddeb);
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
     color: #fff;
     border: none;
     padding: 12px 30px;
     border-radius: 50px;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 600;
     transition: transform 0.3s ease;
@@ -421,9 +433,9 @@ body {
 }
 
 .contact p {
-    color: #666;
+    color: #555;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     margin: 10px 0;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
@@ -478,14 +490,14 @@ body {
 @keyframes pulse {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
     }
     50% {
         transform: scale(1.05);
-        box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
+        box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
     }
     100% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
     }
 }
