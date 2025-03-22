@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.subscriptions {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 40px;
+    opacity: 0; /* Ascunde inițial titlul pentru animație */
+    animation: fadeIn 1.5s ease-in forwards; /* Adaugă animația fadeIn */
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.plan {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Adaugă tranziție pentru hover */
+}
+
+.plan:hover {
+    transform: translateY(-10px); /* Ridică cardul la hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Umbră mai pronunțată */
+}
+
+.plan.highlighted {
+    border: 2px solid #007bff;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    color: #007bff;
+    margin: 0;
+}
+
+.price {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+li {
+    color: #666;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    animation: pulse 2s infinite; /* Adaugă animația de pulsare */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Animație fadeIn pentru titlu */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Titlul "urcă" */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animație pulse pentru butoane */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
